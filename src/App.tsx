@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./components/Pages/HomePage/HomePage";
+import PuzzlePage from "./components/Pages/PuzzlePage/PuzzlePage";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="puzzle-app">
+      <Routes>
+        {["/Puzzles", "/"].map((path) => {
+          return <Route key={path} path={path} element={<HomePage />} />;
+        })}
+
+        <Route path="/game" element={<PuzzlePage />} />
+        <Route path="*" element={<p className="not-found">Page not found</p>} />
+      </Routes>
     </div>
   );
 }

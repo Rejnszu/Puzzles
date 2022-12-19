@@ -1,0 +1,51 @@
+.grid-item {
+  text-align: center;
+
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 300%;
+  transition: transform 0.3s;
+  cursor: grab;
+  &:hover {
+    box-shadow: inset 0 0 4px black;
+  }
+  &:nth-of-type(1) {
+    background-position: 0% 0%;
+  }
+  &:nth-of-type(2) {
+    background-position: 50% 0%;
+  }
+  &:nth-of-type(3) {
+    background-position: 100% 0%;
+  }
+  &:nth-of-type(4) {
+    background-position: 0% 28.5%;
+  }
+  &:nth-of-type(5) {
+    background-position: 50% 28.5%;
+  }
+  &:nth-of-type(6) {
+    background-position: 100% 28.5%;
+  }
+  &:nth-of-type(7) {
+    background-position: 0% 57%;
+  }
+  &:nth-of-type(8) {
+    background-position: 50% 57%;
+  }
+  &:nth-of-type(9) {
+    background-position: 100% 57%;
+  }
+  &:nth-of-type(10) {
+    background-position: 0% 85.5%;
+  }
+  &:nth-of-type(11) {
+    background-position: 50% 85.5%;
+  }
+  &:nth-of-type(12) {
+    background-position: 100% 85.5%;
+  }
+  &.movable {
+    opacity: 0.7;
+  }
+}

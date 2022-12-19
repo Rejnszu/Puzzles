@@ -1,0 +1,14 @@
+.score {
+  font-size: 2rem;
+  font-family: var(--main-font);
+  font-weight: 700;
+  position: absolute;
+  letter-spacing: 5px;
+  top: 30px;
+  left: 30px;
+  @media (max-width: 1020px) {
+    position: unset;
+    margin: 1rem auto;
+    text-align: center;
+  }
+}

@@ -1,0 +1,39 @@
+.select {
+  background-size: 100%;
+  background-position: center;
+  height: 600px;
+  width: 400px;
+
+  cursor: pointer;
+  position: relative;
+  border: 5px solid #6e529d;
+
+  transition: background 0.3s, transform 2s, box-shadow 1s;
+  @media (max-width: 1600px) {
+    width: 300px;
+    height: 500px;
+  }
+  @media (max-width: 1250px) {
+    width: 200px;
+    height: 300px;
+  }
+  @media (max-width: 850px) {
+    max-width: 80%;
+  }
+  &:hover {
+    background-size: 110%;
+  }
+  &.grow {
+    transform: scale(150%);
+    box-shadow: 0 0 0 3000px black;
+    z-index: 10;
+  }
+}
+.select__title {
+  font-family: var(--main-font);
+  color: white;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: black;
+}
