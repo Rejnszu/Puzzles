@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Puzzles/static/css/main.b523ea13.css",
+    "main.js": "/Puzzles/static/js/main.759cab5a.js",
+    "static/media/people3.jpg": "/Puzzles/static/media/people3.1254a23e8e2156354203.jpg",
+    "static/media/places3.jpg": "/Puzzles/static/media/places3.1fc1cb297d7a3243008e.jpg",
+    "static/media/random3.jpg": "/Puzzles/static/media/random3.568051e9946a9e551287.jpg",
+    "static/media/places4.jpg": "/Puzzles/static/media/places4.883251c94b23fc48f5f0.jpg",
+    "static/media/random2.jpg": "/Puzzles/static/media/random2.fba17148f86f2bd7c2e2.jpg",
+    "static/media/places6.jpg": "/Puzzles/static/media/places6.4bfdf083e40b2f7e267f.jpg",
+    "static/media/places2.jpg": "/Puzzles/static/media/places2.4598b5f0f1b3facb46ce.jpg",
+    "static/media/random4.jpg": "/Puzzles/static/media/random4.9d76c18b4ae83366ff3f.jpg",
+    "static/media/places1.jpg": "/Puzzles/static/media/places1.a3f1d2665b5509e5df4d.jpg",
+    "static/media/people1.jpg": "/Puzzles/static/media/people1.2542360f5d1b8c2e3dcc.jpg",
+    "static/media/places5.jpg": "/Puzzles/static/media/places5.6a77a59368a9ff2f6696.jpg",
+    "static/media/random5.jpg": "/Puzzles/static/media/random5.97d066ca78988f0de46e.jpg",
+    "static/media/random7.jpg": "/Puzzles/static/media/random7.8a74c325834d7ee7d0eb.jpg",
+    "static/media/random1.jpg": "/Puzzles/static/media/random1.ffc6d0f219fe2ff13924.jpg",
+    "static/media/people2.jpg": "/Puzzles/static/media/people2.c6fb999c375cd4d2717c.jpg",
+    "static/media/places7.jpg": "/Puzzles/static/media/places7.2c2ade757104a7eac840.jpg",
+    "static/media/people6.jpg": "/Puzzles/static/media/people6.fa26739fc1e513c22333.jpg",
+    "static/media/people4.jpeg": "/Puzzles/static/media/people4.b758fe2f022f428dfd6a.jpeg",
+    "static/media/random6.jpg": "/Puzzles/static/media/random6.074c96fd3961f589bf5a.jpg",
+    "static/media/people5.jpg": "/Puzzles/static/media/people5.e7b856cac997a3c7caa7.jpg",
+    "static/media/people7.jpg": "/Puzzles/static/media/people7.bbbdc15cb2c345967766.jpg",
+    "index.html": "/Puzzles/index.html",
+    "main.b523ea13.css.map": "/Puzzles/static/css/main.b523ea13.css.map",
+    "main.759cab5a.js.map": "/Puzzles/static/js/main.759cab5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b523ea13.css",
+    "static/js/main.759cab5a.js"
+  ]
+}
