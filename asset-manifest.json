@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Puzzles/static/css/main.b523ea13.css",
-    "main.js": "/Puzzles/static/js/main.759cab5a.js",
+    "main.js": "/Puzzles/static/js/main.0eed3b14.js",
     "static/media/people3.jpg": "/Puzzles/static/media/people3.1254a23e8e2156354203.jpg",
     "static/media/places3.jpg": "/Puzzles/static/media/places3.1fc1cb297d7a3243008e.jpg",
     "static/media/random3.jpg": "/Puzzles/static/media/random3.568051e9946a9e551287.jpg",
@@ -25,10 +25,10 @@
     "static/media/people7.jpg": "/Puzzles/static/media/people7.bbbdc15cb2c345967766.jpg",
     "index.html": "/Puzzles/index.html",
     "main.b523ea13.css.map": "/Puzzles/static/css/main.b523ea13.css.map",
-    "main.759cab5a.js.map": "/Puzzles/static/js/main.759cab5a.js.map"
+    "main.0eed3b14.js.map": "/Puzzles/static/js/main.0eed3b14.js.map"
   },
   "entrypoints": [
     "static/css/main.b523ea13.css",
-    "static/js/main.759cab5a.js"
+    "static/js/main.0eed3b14.js"
   ]
 }
