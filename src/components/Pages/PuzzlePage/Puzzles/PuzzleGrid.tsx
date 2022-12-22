@@ -1,23 +1,23 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import styles from "./PuzzleGrid.module.scss";
 import GridItem from "./GridItem";
-import { gridPositions } from "./GridPositions";
+import { getGridPositions } from "./GetGridPositions";
 import { PuzzleContext } from "../../../../context/puzzle-context";
-
+import { GridContext } from "../../../../context/grid-context";
 interface PuzzleGridProps {
   image: string;
-  shuffledGrid: string[];
 }
-const PuzzleGrid = ({ image, shuffledGrid }: PuzzleGridProps) => {
-  const [changed, setChanged] = useState(true);
-  const [win, setWin] = useState(false);
-  const changeScore = useContext(PuzzleContext).setScore;
+const PuzzleGrid = ({ image }: PuzzleGridProps) => {
+  const [checkWin, setCheckWin] = useState(true);
+  const { setScore, setStart, setWin, win } = useContext(PuzzleContext);
+  const shuffledGrid = useContext(GridContext).shuffledGrid;
   const gridRef = useRef<HTMLDivElement>(null);
-  const gridPosition = gridPositions();
-  
+  const gridPositions = getGridPositions();
+
   const compareArrays = (arr1: string[], arr2: string[]) => {
     return JSON.stringify(arr1) === JSON.stringify(arr2);
   };
+
   useEffect(() => {
     const gridItems = gridRef.current!.children;
     if (
@@ -33,20 +33,18 @@ const PuzzleGrid = ({ image, shuffledGrid }: PuzzleGridProps) => {
         Array.from(gridItems).map(
           (gridItem) => (gridItem as HTMLDivElement).style.gridArea
         ),
-        gridPosition
+        gridPositions
       )
     ) {
       setWin(true);
-      changeScore((prevScore) => prevScore + 1);
+      setStart(false);
+      setScore((prevScore) => prevScore + 1);
     } else {
       setWin(false);
     }
-  }, [changed]);
+  }, [checkWin]);
 
-  useEffect(() => {
-    setWin(false);
-  }, [shuffledGrid]);
-
+  console.log("check");
   return (
     <div
       ref={gridRef}
@@ -69,8 +67,7 @@ const PuzzleGrid = ({ image, shuffledGrid }: PuzzleGridProps) => {
             gridPosition={gridPosition}
             image={image}
             key={i}
-            setChanged={setChanged}
-            win={win}
+            setCheckWin={setCheckWin}
           />
         );
       })}

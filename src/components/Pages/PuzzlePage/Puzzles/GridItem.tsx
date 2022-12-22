@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./GridItem.module.scss";
-
+import { PuzzleContext } from "../../../../context/puzzle-context";
 const rotations: number[] = [90, 180, 270];
 
 let firstSelectedItem: HTMLDivElement | EventTarget;
@@ -8,24 +8,23 @@ let secondSelectedItem: HTMLDivElement | EventTarget;
 let firstItemPosition: string | EventTarget;
 
 interface GridItemProps {
-  setChanged: React.Dispatch<React.SetStateAction<boolean>>;
+  setCheckWin: React.Dispatch<React.SetStateAction<boolean>>;
   image: string;
-  gridPosition?: string;
-  win: boolean;
+  gridPosition: string;
+
   shuffledGrid: string[];
 }
 
 const GridItem = ({
-  setChanged,
+  setCheckWin,
   image,
   gridPosition,
-  win,
   shuffledGrid,
 }: GridItemProps) => {
   const [randomRotation, setRandomRotation] = useState(
     rotations[Math.floor(Math.random() * rotations.length)]
   );
-
+  const { setStart, win } = useContext(PuzzleContext);
   useEffect(() => {
     setRandomRotation(rotations[Math.floor(Math.random() * rotations.length)]);
   }, [shuffledGrid]);
@@ -41,7 +40,8 @@ const GridItem = ({
       className={`${styles["grid-item"]}`}
       onClick={() => {
         setRandomRotation((prevRotation) => prevRotation + 90);
-        setChanged((prevValue) => !prevValue);
+        setCheckWin((prevValue) => !prevValue);
+        setStart(true);
       }}
       onMouseDown={(e) => {
         e.preventDefault();
@@ -52,12 +52,13 @@ const GridItem = ({
         (firstSelectedItem as HTMLDivElement).classList.add(
           `${styles.movable}`
         );
+        setStart(true);
       }}
       onMouseUp={(e) => {
         e.preventDefault();
 
         secondSelectedItem = e.target as HTMLDivElement;
-        setChanged((prevValue) => !prevValue);
+        setCheckWin((prevValue) => !prevValue);
         (firstSelectedItem as HTMLDivElement).style.gridArea = (
           e.target as HTMLDivElement
         ).style.gridArea;
@@ -68,6 +69,7 @@ const GridItem = ({
         (
           secondSelectedItem as HTMLDivElement
         ).style.gridArea = `${firstItemPosition}`;
+        setStart(true);
       }}
     ></div>
   );

@@ -11,6 +11,10 @@ interface PuzzleContextObj {
   >;
   score: number;
   setScore: React.Dispatch<React.SetStateAction<number>>;
+  start: boolean;
+  setStart: React.Dispatch<React.SetStateAction<boolean>>;
+  win: boolean;
+  setWin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const PuzzleContext = React.createContext<PuzzleContextObj>({
@@ -18,6 +22,10 @@ export const PuzzleContext = React.createContext<PuzzleContextObj>({
   setSelectedImagesArray: () => {},
   score: 0,
   setScore: () => {},
+  start: false,
+  setStart: () => {},
+  win: false,
+  setWin: () => {},
 });
 
 interface ContextProps {
@@ -29,12 +37,17 @@ const PuzzleContextProvider = ({ children }: ContextProps) => {
     imagesArray[0]
   );
   const [score, setScore] = useState(0);
-
+  const [start, setStart] = useState(false);
+  const [win, setWin] = useState(false);
   const contextValue: PuzzleContextObj = {
     selectedImagesArray: selectedImagesArray,
     setSelectedImagesArray: setSelectedImagesArray,
     score: score,
     setScore: setScore,
+    start: start,
+    setStart: setStart,
+    win: win,
+    setWin: setWin,
   };
 
   return (

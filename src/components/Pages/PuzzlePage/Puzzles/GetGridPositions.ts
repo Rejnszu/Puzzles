@@ -1,4 +1,4 @@
-export const gridPositions = () => {
+export const getGridPositions = () => {
   let positions: string[];
 
   let userAgent = navigator.userAgent;
