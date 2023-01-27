@@ -5,8 +5,9 @@ import Header from "../../UI/Header";
 import PuzzleGrid from "./Puzzles/PuzzleGrid";
 import Score from "./Score/Score";
 import Timer from "./Timer/Timer";
+import Loss from "./Loss/Loss";
+import Win from "./Win/Win";
 import { motion } from "framer-motion";
-
 import { useNavigate } from "react-router";
 import { IoMdExit } from "react-icons/io";
 import { PuzzleContext } from "../../../context/puzzle-context";
@@ -14,7 +15,17 @@ import { GridContext } from "../../../context/grid-context";
 
 const PuzzlePage = () => {
   const navigate = useNavigate();
-  const { selectedImagesArray, setStart, setWin } = useContext(PuzzleContext);
+  const {
+    selectedImagesArray,
+    setStart,
+    setWin,
+    setLoss,
+    loss,
+    win,
+    score,
+    deleteImageAfterWin,
+  } = useContext(PuzzleContext);
+
   const { onShuffleGrid } = useContext(GridContext);
 
   const [randomNumber, setRandomNumber] = useState(
@@ -24,6 +35,10 @@ const PuzzlePage = () => {
   let image = selectedImagesArray.images[randomNumber];
 
   const shufflePuzzles = () => {
+    if (win) {
+      deleteImageAfterWin(image);
+    }
+
     setRandomNumber((prevNumber) => {
       let number: number;
       do {
@@ -31,9 +46,10 @@ const PuzzlePage = () => {
       } while (prevNumber === number);
       return number;
     });
-    onShuffleGrid();
     setStart(false);
     setWin(false);
+    setLoss(false);
+    onShuffleGrid();
   };
 
   return (
@@ -60,6 +76,8 @@ const PuzzlePage = () => {
       >
         <IoMdExit />
       </Button>
+      {loss && <Loss onClick={shufflePuzzles} />}
+      {score >= 5 && <Win />}
     </motion.main>
   );
 };

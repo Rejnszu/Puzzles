@@ -8,15 +8,14 @@ let secondSelectedItem: HTMLDivElement | EventTarget;
 let firstItemPosition: string | EventTarget;
 
 interface GridItemProps {
-  setCheckWin: React.Dispatch<React.SetStateAction<boolean>>;
+  setCheckIsFinished: React.Dispatch<React.SetStateAction<boolean>>;
   image: string;
   gridPosition: string;
-
   shuffledGrid: string[];
 }
 
 const GridItem = ({
-  setCheckWin,
+  setCheckIsFinished,
   image,
   gridPosition,
   shuffledGrid,
@@ -24,7 +23,8 @@ const GridItem = ({
   const [randomRotation, setRandomRotation] = useState(
     rotations[Math.floor(Math.random() * rotations.length)]
   );
-  const { setStart, win } = useContext(PuzzleContext);
+  const { setStart, win, loss } = useContext(PuzzleContext);
+
   useEffect(() => {
     setRandomRotation(rotations[Math.floor(Math.random() * rotations.length)]);
   }, [shuffledGrid]);
@@ -32,15 +32,15 @@ const GridItem = ({
   return (
     <div
       style={{
-        transform: `rotate(${randomRotation}deg)`,
+        transform: loss ? "rotate(0deg)" : `rotate(${randomRotation}deg)`,
         backgroundImage: `url(${image})`,
         gridArea: gridPosition,
-        pointerEvents: win ? "none" : "auto",
+        pointerEvents: win || loss ? "none" : "auto",
       }}
       className={`${styles["grid-item"]}`}
       onClick={() => {
         setRandomRotation((prevRotation) => prevRotation + 90);
-        setCheckWin((prevValue) => !prevValue);
+        setCheckIsFinished((prevValue) => !prevValue);
         setStart(true);
       }}
       onMouseDown={(e) => {
@@ -58,7 +58,7 @@ const GridItem = ({
         e.preventDefault();
 
         secondSelectedItem = e.target as HTMLDivElement;
-        setCheckWin((prevValue) => !prevValue);
+        setCheckIsFinished((prevValue) => !prevValue);
         (firstSelectedItem as HTMLDivElement).style.gridArea = (
           e.target as HTMLDivElement
         ).style.gridArea;

@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import styles from "./Timer.module.scss";
 import { PuzzleContext } from "../../../../context/puzzle-context";
-let interval;
+let interval: NodeJS.Timeout;
 const Timer = () => {
   const [filling, setFilling] = useState(0);
-  const { start, win } = useContext(PuzzleContext);
+  const { start, win, setLoss, score, setScore } = useContext(PuzzleContext);
+
   useEffect(() => {
     if (start && !win && filling <= 99.75) {
       interval = setInterval(
         () => setFilling((prevFilling) => prevFilling + 0.25),
-        150
+        1
       );
     } else if (!start) {
       setFilling(0);
@@ -19,6 +20,14 @@ const Timer = () => {
     };
   }, [start, win, filling]);
 
+  useEffect(() => {
+    if (filling === 100) {
+      setLoss(true);
+      if (score > 0) {
+        setScore((prevScore) => prevScore - 1);
+      }
+    }
+  }, [filling]);
   return (
     <div className={styles.timer}>
       <span

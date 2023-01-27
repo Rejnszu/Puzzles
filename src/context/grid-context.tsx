@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getGridPositions } from "../components/Pages/PuzzlePage/Puzzles/GetGridPositions";
 import { shuffleGrid } from "../helperFunctions/shuffle-grid";
+
 interface GridContextObj {
   shuffledGrid: string[];
   onShuffleGrid: () => void;

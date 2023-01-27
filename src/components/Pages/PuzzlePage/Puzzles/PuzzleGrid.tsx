@@ -8,9 +8,9 @@ interface PuzzleGridProps {
   image: string;
 }
 const PuzzleGrid = ({ image }: PuzzleGridProps) => {
-  const [checkWin, setCheckWin] = useState(true);
-  const { setScore, setStart, setWin, win } = useContext(PuzzleContext);
-  const shuffledGrid = useContext(GridContext).shuffledGrid;
+  const [checkIsFinished, setCheckIsFinished] = useState(true);
+  const { setScore, setStart, setWin, win, loss } = useContext(PuzzleContext);
+  const { shuffledGrid } = useContext(GridContext);
   const gridRef = useRef<HTMLDivElement>(null);
   const gridPositions = getGridPositions();
 
@@ -42,9 +42,8 @@ const PuzzleGrid = ({ image }: PuzzleGridProps) => {
     } else {
       setWin(false);
     }
-  }, [checkWin]);
+  }, [checkIsFinished]);
 
-  console.log("check");
   return (
     <div
       ref={gridRef}
@@ -58,19 +57,32 @@ const PuzzleGrid = ({ image }: PuzzleGridProps) => {
           item.classList.remove(`${styles.isGrabbing}`)
         )
       }
-      className={`${styles["puzzle-grid"]} ${win ? styles.win : ""}`}
+      className={`${styles["puzzle-grid"]} ${win || loss ? styles.end : ""}`}
     >
-      {shuffledGrid.map((gridPosition, i) => {
-        return (
-          <GridItem
-            shuffledGrid={shuffledGrid}
-            gridPosition={gridPosition}
-            image={image}
-            key={i}
-            setCheckWin={setCheckWin}
-          />
-        );
-      })}
+      {!loss &&
+        shuffledGrid.map((gridPosition, i) => {
+          return (
+            <GridItem
+              shuffledGrid={shuffledGrid}
+              gridPosition={gridPosition}
+              image={image}
+              key={i}
+              setCheckIsFinished={setCheckIsFinished}
+            />
+          );
+        })}
+      {loss &&
+        gridPositions.map((gridPosition, i) => {
+          return (
+            <GridItem
+              shuffledGrid={shuffledGrid}
+              gridPosition={gridPosition}
+              image={image}
+              key={i}
+              setCheckIsFinished={setCheckIsFinished}
+            />
+          );
+        })}
     </div>
   );
 };

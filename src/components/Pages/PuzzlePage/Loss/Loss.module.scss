@@ -1,0 +1,24 @@
+.loss {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  background-color: rgba(0, 0, 0, 0.48);
+  letter-spacing: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  text-align: center;
+  p {
+    max-width: 90%;
+  }
+}
+.button--loss {
+  color: white;
+  border: 2px solid white;
+}
