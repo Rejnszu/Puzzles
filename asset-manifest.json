@@ -1,34 +1,43 @@
 {
   "files": {
-    "main.css": "/Puzzles/static/css/main.0dc7a6d0.css",
-    "main.js": "/Puzzles/static/js/main.bb2591a8.js",
-    "static/media/people3.jpg": "/Puzzles/static/media/people3.1254a23e8e2156354203.jpg",
+    "main.css": "/Puzzles/static/css/main.85b34a92.css",
+    "main.js": "/Puzzles/static/js/main.39156ee3.js",
     "static/media/places3.jpg": "/Puzzles/static/media/places3.1fc1cb297d7a3243008e.jpg",
     "static/media/random3.jpg": "/Puzzles/static/media/random3.568051e9946a9e551287.jpg",
     "static/media/places4.jpg": "/Puzzles/static/media/places4.883251c94b23fc48f5f0.jpg",
+    "static/media/people4.jpg": "/Puzzles/static/media/people4.ca36ee37667c8dc68708.jpg",
     "static/media/random2.jpg": "/Puzzles/static/media/random2.fba17148f86f2bd7c2e2.jpg",
     "static/media/places6.jpg": "/Puzzles/static/media/places6.4bfdf083e40b2f7e267f.jpg",
-    "static/media/people4.jpg": "/Puzzles/static/media/people4.ba9dcba05bb509d3c52c.jpg",
+    "static/media/places9.jpg": "/Puzzles/static/media/places9.25e3110ccdf323634e87.jpg",
     "static/media/places2.jpg": "/Puzzles/static/media/places2.4598b5f0f1b3facb46ce.jpg",
     "static/media/random4.jpg": "/Puzzles/static/media/random4.9d76c18b4ae83366ff3f.jpg",
     "static/media/places1.jpg": "/Puzzles/static/media/places1.a3f1d2665b5509e5df4d.jpg",
+    "static/media/random10.jpg": "/Puzzles/static/media/random10.b1530603f73d3a21e5f0.jpg",
     "static/media/people1.jpg": "/Puzzles/static/media/people1.2542360f5d1b8c2e3dcc.jpg",
     "static/media/places5.jpg": "/Puzzles/static/media/places5.6a77a59368a9ff2f6696.jpg",
     "static/media/random5.jpg": "/Puzzles/static/media/random5.97d066ca78988f0de46e.jpg",
     "static/media/random7.jpg": "/Puzzles/static/media/random7.8a74c325834d7ee7d0eb.jpg",
+    "static/media/people7.jpg": "/Puzzles/static/media/people7.cb495901b3b43160f014.jpg",
+    "static/media/places8.jpg": "/Puzzles/static/media/places8.94c0192bad097d1a6130.jpg",
+    "static/media/places10.jpg": "/Puzzles/static/media/places10.9ea926d223bf55bba39a.jpg",
     "static/media/random1.jpg": "/Puzzles/static/media/random1.ffc6d0f219fe2ff13924.jpg",
+    "static/media/people3.jpg": "/Puzzles/static/media/people3.98d4d78724a3c9301fdc.jpg",
     "static/media/people2.jpg": "/Puzzles/static/media/people2.c6fb999c375cd4d2717c.jpg",
     "static/media/places7.jpg": "/Puzzles/static/media/places7.2c2ade757104a7eac840.jpg",
+    "static/media/people10.jpg": "/Puzzles/static/media/people10.3cccc51832f6c1f418a8.jpg",
+    "static/media/random8.jpg": "/Puzzles/static/media/random8.1012ac136cfc3b44aeba.jpg",
     "static/media/people6.jpg": "/Puzzles/static/media/people6.fa26739fc1e513c22333.jpg",
+    "static/media/random9.jpg": "/Puzzles/static/media/random9.367bd7ce89787b0a39ca.jpg",
     "static/media/random6.jpg": "/Puzzles/static/media/random6.074c96fd3961f589bf5a.jpg",
+    "static/media/people8.jpg": "/Puzzles/static/media/people8.8f4022a131eb4d1c9502.jpg",
     "static/media/people5.jpg": "/Puzzles/static/media/people5.e7b856cac997a3c7caa7.jpg",
-    "static/media/people7.jpg": "/Puzzles/static/media/people7.bbbdc15cb2c345967766.jpg",
+    "static/media/people9.jpg": "/Puzzles/static/media/people9.0583d19854c8c24da070.jpg",
     "index.html": "/Puzzles/index.html",
-    "main.0dc7a6d0.css.map": "/Puzzles/static/css/main.0dc7a6d0.css.map",
-    "main.bb2591a8.js.map": "/Puzzles/static/js/main.bb2591a8.js.map"
+    "main.85b34a92.css.map": "/Puzzles/static/css/main.85b34a92.css.map",
+    "main.39156ee3.js.map": "/Puzzles/static/js/main.39156ee3.js.map"
   },
   "entrypoints": [
-    "static/css/main.0dc7a6d0.css",
-    "static/js/main.bb2591a8.js"
+    "static/css/main.85b34a92.css",
+    "static/js/main.39156ee3.js"
   ]
 }
