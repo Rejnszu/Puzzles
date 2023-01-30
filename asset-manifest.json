@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Puzzles/static/css/main.85b34a92.css",
-    "main.js": "/Puzzles/static/js/main.39156ee3.js",
+    "main.css": "/Puzzles/static/css/main.9a59cec7.css",
+    "main.js": "/Puzzles/static/js/main.b7892561.js",
     "static/media/places3.jpg": "/Puzzles/static/media/places3.1fc1cb297d7a3243008e.jpg",
     "static/media/random3.jpg": "/Puzzles/static/media/random3.568051e9946a9e551287.jpg",
     "static/media/places4.jpg": "/Puzzles/static/media/places4.883251c94b23fc48f5f0.jpg",
@@ -33,11 +33,11 @@
     "static/media/people5.jpg": "/Puzzles/static/media/people5.e7b856cac997a3c7caa7.jpg",
     "static/media/people9.jpg": "/Puzzles/static/media/people9.0583d19854c8c24da070.jpg",
     "index.html": "/Puzzles/index.html",
-    "main.85b34a92.css.map": "/Puzzles/static/css/main.85b34a92.css.map",
-    "main.39156ee3.js.map": "/Puzzles/static/js/main.39156ee3.js.map"
+    "main.9a59cec7.css.map": "/Puzzles/static/css/main.9a59cec7.css.map",
+    "main.b7892561.js.map": "/Puzzles/static/js/main.b7892561.js.map"
   },
   "entrypoints": [
-    "static/css/main.85b34a92.css",
-    "static/js/main.39156ee3.js"
+    "static/css/main.9a59cec7.css",
+    "static/js/main.b7892561.js"
   ]
 }
