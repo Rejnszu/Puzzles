@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styles from "./Select.module.scss";
 import { useNavigate } from "react-router-dom";
 import { PuzzleContext } from "../../../../context/puzzle-context";
-import { imagesArray } from "../../PuzzlePage/Images";
+import { imagesArray } from "../../../../helpers/Images";
 interface SelectProps {
   img: string;
   title: string;

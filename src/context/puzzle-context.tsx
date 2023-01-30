@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { imagesArray } from "../components/Pages/PuzzlePage/Images";
+import { imagesArray } from "../helpers/Images";
 interface SelctedImagesArray {
   title: string;
   images: string[];
@@ -15,8 +15,8 @@ interface PuzzleContextObj {
   setStart: React.Dispatch<React.SetStateAction<boolean>>;
   win: boolean;
   setWin: React.Dispatch<React.SetStateAction<boolean>>;
-  loss: boolean;
-  setLoss: React.Dispatch<React.SetStateAction<boolean>>;
+  defeat: boolean;
+  setDefeat: React.Dispatch<React.SetStateAction<boolean>>;
   deleteImageAfterWin: (image: string) => void;
 }
 
@@ -29,8 +29,8 @@ export const PuzzleContext = React.createContext<PuzzleContextObj>({
   setStart: () => {},
   win: false,
   setWin: () => {},
-  loss: false,
-  setLoss: () => {},
+  defeat: false,
+  setDefeat: () => {},
   deleteImageAfterWin: () => {},
 });
 
@@ -51,7 +51,7 @@ const PuzzleContextProvider = ({ children }: ContextProps) => {
   const [score, setScore] = useState(0);
   const [start, setStart] = useState(false);
   const [win, setWin] = useState(false);
-  const [loss, setLoss] = useState(false);
+  const [defeat, setDefeat] = useState(false);
   const contextValue: PuzzleContextObj = {
     selectedImagesArray: selectedImagesArray,
     setSelectedImagesArray: setSelectedImagesArray,
@@ -61,8 +61,8 @@ const PuzzleContextProvider = ({ children }: ContextProps) => {
     setStart: setStart,
     win: win,
     setWin: setWin,
-    loss: loss,
-    setLoss: setLoss,
+    defeat: defeat,
+    setDefeat: setDefeat,
     deleteImageAfterWin: deleteImageAfterWin,
   };
 

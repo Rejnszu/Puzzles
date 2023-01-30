@@ -23,7 +23,7 @@ const GridItem = ({
   const [randomRotation, setRandomRotation] = useState(
     rotations[Math.floor(Math.random() * rotations.length)]
   );
-  const { setStart, win, loss } = useContext(PuzzleContext);
+  const { setStart, win, defeat } = useContext(PuzzleContext);
 
   useEffect(() => {
     setRandomRotation(rotations[Math.floor(Math.random() * rotations.length)]);
@@ -32,10 +32,10 @@ const GridItem = ({
   return (
     <div
       style={{
-        transform: loss ? "rotate(0deg)" : `rotate(${randomRotation}deg)`,
+        transform: defeat ? "rotate(0deg)" : `rotate(${randomRotation}deg)`,
         backgroundImage: `url(${image})`,
         gridArea: gridPosition,
-        pointerEvents: win || loss ? "none" : "auto",
+        pointerEvents: win || defeat ? "none" : "auto",
       }}
       className={`${styles["grid-item"]}`}
       onClick={() => {

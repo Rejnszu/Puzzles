@@ -4,13 +4,13 @@ import { PuzzleContext } from "../../../../context/puzzle-context";
 let interval: NodeJS.Timeout;
 const Timer = () => {
   const [filling, setFilling] = useState(0);
-  const { start, win, setLoss, score, setScore } = useContext(PuzzleContext);
+  const { start, win, setDefeat, score, setScore } = useContext(PuzzleContext);
 
   useEffect(() => {
     if (start && !win && filling <= 99.75) {
       interval = setInterval(
         () => setFilling((prevFilling) => prevFilling + 0.25),
-        1
+        150
       );
     } else if (!start) {
       setFilling(0);
@@ -22,7 +22,7 @@ const Timer = () => {
 
   useEffect(() => {
     if (filling === 100) {
-      setLoss(true);
+      setDefeat(true);
       if (score > 0) {
         setScore((prevScore) => prevScore - 1);
       }

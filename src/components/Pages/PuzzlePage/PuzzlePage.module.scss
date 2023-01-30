@@ -6,6 +6,12 @@
   position: absolute;
   top: 30px;
   right: 30px;
+  transition: all 0.3s;
+  &.disabled {
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.459);
+    color: white;
+  }
 
   @media (max-width: 1250px) {
     position: unset;

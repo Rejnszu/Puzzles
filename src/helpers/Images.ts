@@ -8,7 +8,10 @@ const placesArray = {
     "places5",
     "places6",
     "places7",
-  ].map((place) => require(`../../../assets/places/${place}.jpg`)),
+    "places8",
+    "places9",
+    "places10",
+  ].map((place) => require(`../assets/places/${place}.jpg`)),
 };
 const peopleArray = {
   title: "People",
@@ -20,7 +23,10 @@ const peopleArray = {
     "people5",
     "people6",
     "people7",
-  ].map((people) => require(`../../../assets/people/${people}.jpg`)),
+    "people8",
+    "people9",
+    "people10",
+  ].map((people) => require(`../assets/people/${people}.jpg`)),
 };
 
 const randomArray = {
@@ -33,7 +39,10 @@ const randomArray = {
     "random5",
     "random6",
     "random7",
-  ].map((random) => require(`../../../assets/random/${random}.jpg`)),
+    "random8",
+    "random9",
+    "random10",
+  ].map((random) => require(`../assets/random/${random}.jpg`)),
 };
 
 export const imagesArray = [placesArray, peopleArray, randomArray];

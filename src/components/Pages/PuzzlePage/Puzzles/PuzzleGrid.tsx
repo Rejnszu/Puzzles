@@ -9,7 +9,7 @@ interface PuzzleGridProps {
 }
 const PuzzleGrid = ({ image }: PuzzleGridProps) => {
   const [checkIsFinished, setCheckIsFinished] = useState(true);
-  const { setScore, setStart, setWin, win, loss } = useContext(PuzzleContext);
+  const { setScore, setStart, setWin, win, defeat } = useContext(PuzzleContext);
   const { shuffledGrid } = useContext(GridContext);
   const gridRef = useRef<HTMLDivElement>(null);
   const gridPositions = getGridPositions();
@@ -57,10 +57,10 @@ const PuzzleGrid = ({ image }: PuzzleGridProps) => {
           item.classList.remove(`${styles.isGrabbing}`)
         )
       }
-      className={`${styles["puzzle-grid"]} ${win || loss ? styles.end : ""}`}
+      className={`${styles["puzzle-grid"]} ${win || defeat ? styles.end : ""}`}
     >
-      {!loss &&
-        shuffledGrid.map((gridPosition, i) => {
+      {!defeat &&
+        (win ? gridPositions : shuffledGrid).map((gridPosition, i) => {
           return (
             <GridItem
               shuffledGrid={shuffledGrid}
@@ -71,7 +71,7 @@ const PuzzleGrid = ({ image }: PuzzleGridProps) => {
             />
           );
         })}
-      {loss &&
+      {defeat &&
         gridPositions.map((gridPosition, i) => {
           return (
             <GridItem

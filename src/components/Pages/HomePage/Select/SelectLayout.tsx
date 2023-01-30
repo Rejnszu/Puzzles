@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SelectLayout.module.scss";
-import { imagesArray } from "../../PuzzlePage/Images";
+import { imagesArray } from "../../../../helpers/Images";
 import Select from "./Select";
 
 const SelectLayout = () => {

@@ -5,7 +5,7 @@ import Header from "../../UI/Header";
 import PuzzleGrid from "./Puzzles/PuzzleGrid";
 import Score from "./Score/Score";
 import Timer from "./Timer/Timer";
-import Loss from "./Loss/Loss";
+import Loss from "./Defeat/Defeat";
 import Win from "./Win/Win";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
@@ -18,9 +18,10 @@ const PuzzlePage = () => {
   const {
     selectedImagesArray,
     setStart,
+    start,
     setWin,
-    setLoss,
-    loss,
+    setDefeat,
+    defeat,
     win,
     score,
     deleteImageAfterWin,
@@ -33,23 +34,28 @@ const PuzzlePage = () => {
   );
 
   let image = selectedImagesArray.images[randomNumber];
+  let endOfGameDefeat = selectedImagesArray.images.length === 1 && score < 5;
 
   const shufflePuzzles = () => {
     if (win) {
       deleteImageAfterWin(image);
     }
-
-    setRandomNumber((prevNumber) => {
-      let number: number;
-      do {
-        number = Math.floor(Math.random() * selectedImagesArray.images.length);
-      } while (prevNumber === number);
-      return number;
-    });
+    if (!endOfGameDefeat) {
+      setRandomNumber((prevNumber) => {
+        let number: number;
+        do {
+          number = Math.floor(
+            Math.random() * selectedImagesArray.images.length
+          );
+        } while (prevNumber === number);
+        return number;
+      });
+    }
     setStart(false);
     setWin(false);
-    setLoss(false);
+    setDefeat(false);
     onShuffleGrid();
+    endOfGameDefeat && navigate("/Puzzles");
   };
 
   return (
@@ -64,7 +70,10 @@ const PuzzlePage = () => {
       <Score />
       <Timer />
       <PuzzleGrid image={image} />
-      <Button onClick={shufflePuzzles} style={styles["button--repeat"]}>
+      <Button
+        onClick={shufflePuzzles}
+        style={`${styles["button--repeat"]} ${start && styles.disabled}`}
+      >
         Change Image
       </Button>
       <Button
@@ -76,7 +85,7 @@ const PuzzlePage = () => {
       >
         <IoMdExit />
       </Button>
-      {loss && <Loss onClick={shufflePuzzles} />}
+      {defeat && <Loss endOfGame={endOfGameDefeat} onClick={shufflePuzzles} />}
       {score >= 5 && <Win />}
     </motion.main>
   );
