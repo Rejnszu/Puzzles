@@ -12,6 +12,7 @@ const placesArray = {
     "places9",
     "places10",
   ].map((place) => require(`../assets/places/${place}.jpg`)),
+  level: "Easy",
 };
 const peopleArray = {
   title: "People",
@@ -27,6 +28,7 @@ const peopleArray = {
     "people9",
     "people10",
   ].map((people) => require(`../assets/people/${people}.jpg`)),
+  level: "Medium",
 };
 
 const randomArray = {
@@ -43,6 +45,7 @@ const randomArray = {
     "random9",
     "random10",
   ].map((random) => require(`../assets/random/${random}.jpg`)),
+  level: "Don't Try",
 };
 
 export const imagesArray = [placesArray, peopleArray, randomArray];

@@ -7,7 +7,14 @@ const SelectLayout = () => {
   return (
     <div className={styles["select-layout"]}>
       {imagesArray.map((obj) => {
-        return <Select key={obj.title} title={obj.title} img={obj.images[0]} />;
+        return (
+          <Select
+            key={obj.title}
+            title={obj.title}
+            img={obj.images[0]}
+            level={obj.level}
+          />
+        );
       })}
     </div>
   );

@@ -3,7 +3,9 @@
   background-position: center;
   height: 550px;
   width: 400px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
   position: relative;
   border: 5px solid #6e529d;
@@ -30,6 +32,13 @@
   }
 }
 .select__title {
+  color: white;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: black;
+}
+.select__level {
   color: white;
   margin: 0;
   padding: 0.5rem;

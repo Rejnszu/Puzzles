@@ -6,8 +6,9 @@ import { imagesArray } from "../../../../helpers/Images";
 interface SelectProps {
   img: string;
   title: string;
+  level: string;
 }
-const Select = ({ img, title }: SelectProps) => {
+const Select = ({ img, title, level }: SelectProps) => {
   const puzzleContext = useContext(PuzzleContext);
   const navigate = useNavigate();
   return (
@@ -25,6 +26,7 @@ const Select = ({ img, title }: SelectProps) => {
       style={{ backgroundImage: `url(${img})` }}
     >
       <h3 className={styles["select__title"]}>{title}</h3>
+      <p className={styles["select__level"]}>{level}</p>
     </div>
   );
 };
